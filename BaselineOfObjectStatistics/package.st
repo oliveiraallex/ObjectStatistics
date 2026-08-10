@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfObjectStatistics }
+Package { #name : 'BaselineOfObjectStatistics' }

@@ -1,19 +1,20 @@
 Class {
-	#name : #BaselineOfObjectStatistics,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfObjectStatistics
+	#name : 'BaselineOfObjectStatistics',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfObjectStatistics',
+	#package : 'BaselineOfObjectStatistics'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfObjectStatistics >> baseline: spec [
 	<baseline>
 	spec for: #'common' do: [
 		spec baseline: 'StateSpecs' with: [
 			spec 
-				repository: 'github://dionisiydk/StateSpecs:v5.0.2';
+				repository: 'github://oliveiraallex/StateSpecs:dev13';
 				loads: 'Core' ].
 		spec baseline: 'Mocketry' with: [
-			spec repository: 'github://dionisiydk/Mocketry:v7.0.2' ].
+			spec repository: 'github://oliveiraallex/Mocketry:dev13' ].
 		spec 
 			package: 'ObjectStatistics' with: [spec requires: #('StateSpecs')];
 			package: 'ObjectStatistics-Tests' with: [spec requires: #('ObjectStatistics' 'Mocketry')];
@@ -25,7 +26,7 @@ BaselineOfObjectStatistics >> baseline: spec [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BaselineOfObjectStatistics >> projectClass [
 	^ [ self class environment at: #MetacelloCypressBaselineProject ]
 		on: NotFound
